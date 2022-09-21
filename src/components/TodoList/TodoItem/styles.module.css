@@ -1,0 +1,25 @@
+.container {
+  /* background-color: aqua; */
+  display: flex;
+  align-items: center;
+}
+
+.checked {
+}
+
+.checked .text {
+  text-decoration: line-through;
+}
+
+.check {
+  background-color: transparent;
+  padding: 10px;
+}
+
+.text {
+}
+
+.remove {
+  padding: 10px;
+  margin-left: auto;
+}
