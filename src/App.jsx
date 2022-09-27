@@ -6,7 +6,7 @@ import styles from "./index.module.css";
 import "./global.css";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState();
 
   useEffect(function () {
     const todos = localStorage.getItem("todos");
@@ -18,7 +18,7 @@ function App() {
 
   useEffect(
     function () {
-      if (todos.length === 0) return;
+      if (!todos) return;
 
       localStorage.setItem("todos", JSON.stringify(todos));
     },
@@ -33,6 +33,8 @@ function App() {
 
     setTodos([...todos, newTodo]);
   }
+
+  if (!todos) return null;
 
   return (
     <div className={styles.container}>
